@@ -7,10 +7,20 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Link to='/'>Home</Link>
-        <Link to='chap1'>propsとstate</Link>
-        <div>
-          { this.props.children }
+        <nav className="navbar navbar-default navbar-static-top">
+          <div className="container">
+            <div className="navbar-header">
+              <a className="navbar-brand" href="#">React Practice</a>
+            </div>
+            <ul className="nav navbar-nav">
+              <li><Link to='chap1'>propsとstate</Link></li>
+            </ul>
+          </div>
+        </nav>
+        <div className="container">
+          <div className="row">
+            { this.props.children }
+          </div>
         </div>
       </div>
     )
