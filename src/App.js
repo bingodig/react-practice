@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 import Chapter1 from './chapter1';
 import Chapter2 from './chapter2';
 import Chapter3 from './chapter3';
+import Chapter4 from './chapter4';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
               <li><Link to='chap1'>propsとstate</Link></li>
               <li><Link to='chap2'>simple todo</Link></li>
               <li><Link to='chap3'>Todo</Link></li>
+              <li><Link to='chap4'>counter w/o redux</Link></li>
             </ul>
           </div>
         </nav>
@@ -46,6 +48,7 @@ export default class extends Component {
           <Route path='chap1' component={Chapter1} />
           <Route path='chap2' component={Chapter2} />
           <Route path='chap3' component={Chapter3} />
+          <Route path='chap4' component={Chapter4} />
           <Route path="*" component={None} />
         </Route>
       </Router>
