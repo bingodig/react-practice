@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
-import Chapter1 from './chapter1';
-import Chapter2 from './chapter2';
-import Chapter3 from './chapter3';
-import Chapter4 from './chapter4';
-import Chapter5 from './chapter5';
-import Chapter6 from './chapter6';
-import Chapter7 from './chapter7';
+import PropsState from './react-basic/props-state';
+import SimpleTodo from './react-basic/simple-todo';
+import Todo from './react-intermediate/todo';
+import ReactCounter from './redux-basic/react-counter';
+import ReduxCounter from './redux-basic/redux-counter';
+import ReduxTodo from './redux-intermediate/redux-todo';
+import RedditApp from './redux-async/reddit-app';
 
 class App extends Component {
   render() {
@@ -16,17 +16,60 @@ class App extends Component {
         <nav className="navbar navbar-default navbar-static-top">
           <div className="container">
             <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
               <a className="navbar-brand" href="#">React Practice</a>
             </div>
-            <ul className="nav navbar-nav">
-              <li><Link to='chap1'>propsとstate</Link></li>
-              <li><Link to='chap2'>simple todo</Link></li>
-              <li><Link to='chap3'>Todo</Link></li>
-              <li><Link to='chap4'>counter w/o redux</Link></li>
-              <li><Link to='chap5'>counter w/ redux</Link></li>
-              <li><Link to='chap6'>Redux Todo</Link></li>
-              <li><Link to='chap7'>Reddit App</Link></li>
-            </ul>
+            <div id="navbar" className="navbar-collapse collapse">
+              <ul className="nav navbar-nav">
+                <li className="dropdown">
+                  <a href='#' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    react basic<span className="caret"></span>
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><Link to='react-basic/props-state'>props & state</Link></li>
+                    <li><Link to='react-basic/simple-todo'>Simple Todo</Link></li>
+                  </ul>
+                </li>
+                <li className="dropdown">
+                  <a href='#' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    react intermediate<span className="caret"></span>
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><Link to='react-intermediate/todo'>Todo</Link></li>
+                  </ul>
+                </li>
+                <li className="dropdown">
+                  <a href='#' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    redux basic<span className="caret"></span>
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><Link to='redux-basic/react-counter'>counter w/o redux</Link></li>
+                    <li><Link to='redux-basic/redux-counter'>counter w/ redux</Link></li>
+                  </ul>
+                </li>
+                <li className="dropdown">
+                  <a href='#' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    redux intermediate<span className="caret"></span>
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><Link to='redux-intermediate/redux-todo'>Redux Todo</Link></li>
+                  </ul>
+                </li>
+                <li className="dropdown">
+                  <a href='#' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    redux async<span className="caret"></span>
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><Link to='redux-async/reddit-app'>Reddit App</Link></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
         <div className="container">
@@ -51,13 +94,13 @@ export default class extends Component {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={None} />
-          <Route path='chap1' component={Chapter1} />
-          <Route path='chap2' component={Chapter2} />
-          <Route path='chap3' component={Chapter3} />
-          <Route path='chap4' component={Chapter4} />
-          <Route path='chap5' component={Chapter5} />
-          <Route path='chap6' component={Chapter6} />
-          <Route path='chap7' component={Chapter7} />
+          <Route path='react-basic/props-state' component={PropsState} />
+          <Route path='react-basic/simple-todo' component={SimpleTodo} />
+          <Route path='react-intermediate/todo' component={Todo} />
+          <Route path='redux-basic/react-counter' component={ReactCounter} />
+          <Route path='redux-basic/redux-counter' component={ReduxCounter} />
+          <Route path='redux-intermediate/redux-todo' component={ReduxTodo} />
+          <Route path='redux-async/reddit-app' component={RedditApp} />
           <Route path="*" component={None} />
         </Route>
       </Router>
