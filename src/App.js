@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
+import WhatIsReact from './react-basic/what-is-react';
 import PropsState from './react-basic/props-state';
 import SimpleTodo from './react-basic/simple-todo';
 import Todo from './react-intermediate/todo';
@@ -31,6 +32,7 @@ class App extends Component {
                     react basic<span className="caret"></span>
                   </a>
                   <ul className="dropdown-menu">
+                    <li><Link to='react-basic/what-is-react'>What is React</Link></li>
                     <li><Link to='react-basic/props-state'>props & state</Link></li>
                     <li><Link to='react-basic/simple-todo'>Simple Todo</Link></li>
                   </ul>
@@ -94,6 +96,7 @@ export default class extends Component {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={None} />
+          <Route path='react-basic/what-is-react' component={WhatIsReact} />
           <Route path='react-basic/props-state' component={PropsState} />
           <Route path='react-basic/simple-todo' component={SimpleTodo} />
           <Route path='react-intermediate/todo' component={Todo} />
