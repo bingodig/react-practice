@@ -7,6 +7,7 @@ import Chapter3 from './chapter3';
 import Chapter4 from './chapter4';
 import Chapter5 from './chapter5';
 import Chapter6 from './chapter6';
+import Chapter7 from './chapter7';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
               <li><Link to='chap4'>counter w/o redux</Link></li>
               <li><Link to='chap5'>counter w/ redux</Link></li>
               <li><Link to='chap6'>Redux Todo</Link></li>
+              <li><Link to='chap7'>Reddit App</Link></li>
             </ul>
           </div>
         </nav>
@@ -55,6 +57,7 @@ export default class extends Component {
           <Route path='chap4' component={Chapter4} />
           <Route path='chap5' component={Chapter5} />
           <Route path='chap6' component={Chapter6} />
+          <Route path='chap7' component={Chapter7} />
           <Route path="*" component={None} />
         </Route>
       </Router>
