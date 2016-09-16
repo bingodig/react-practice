@@ -1,16 +1,26 @@
 # React Practice
 
-このレポジトリはReactの勉強用のレポジトリです。
+This repository is created for stydying React.
+Description in this application is written by Japanese. (translate into English... not decided.)
 
-## 目的
+## Purpose
 
-- プロジェクト形式にしてより実践的に学習する。
-- 自分の学習ログを残して後で参照出来るようにする。
-- 他人がReactの勉強をするときに参考になるようにする。
+This application offers you opportunity of working on hands-on practice for React framework.
 
-## 実行
+## Themes
 
-プロジェクトのclone、依存パッケージのインストール、サーバーの起動を行います。
+You can stydy some themes below.
+
+- React Basic
+- React Intermediate
+- Redux Basic
+- Redux Intermediate
+- Redux Async
+
+## Getting Started
+
+You need to do something before studying.( clone ploject, install package, start local server. )
+This README requires you to run npm installer. First of all, you have to check whether npm installer has already installed. If not, you need to set npm installer up.
 
 ```
 $ git clone git@github.com:kuboshizuma/react-practice.git
@@ -19,5 +29,5 @@ $ npm install
 $ npm start
 ```
 
-ここまで出来たらブラウザから `http://localhost:8080` にアクセスしてみます。
-表示がうまく出来ていれば成功です。
+Here, you can access `http://localhost:8080`.
+Have fun to study React !
