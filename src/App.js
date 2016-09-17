@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import WhatIsReact from './react-basic/what-is-react';
 import PropsState from './react-basic/props-state';
 import SimpleTodo from './react-basic/simple-todo';
+import Tips from './react-basic/tips';
 import Todo from './react-intermediate/todo';
 import ReactCounter from './redux-basic/react-counter';
 import ReduxCounter from './redux-basic/redux-counter';
@@ -38,6 +39,7 @@ class App extends Component {
                     <li><Link to='react-basic/what-is-react'>What is React</Link></li>
                     <li><Link to='react-basic/props-state'>props & state</Link></li>
                     <li><Link to='react-basic/simple-todo'>Simple Todo</Link></li>
+                    <li><Link to='react-basic/tips'>Tips</Link></li>
                   </ul>
                 </li>
                 <li className="dropdown">
@@ -111,6 +113,7 @@ export default class extends Component {
           <Route path='react-basic/what-is-react' component={WhatIsReact} />
           <Route path='react-basic/props-state' component={PropsState} />
           <Route path='react-basic/simple-todo' component={SimpleTodo} />
+          <Route path='react-basic/tips' component={Tips} />
           <Route path='react-intermediate/todo' component={Todo} />
           <Route path='redux-basic/react-counter' component={ReactCounter} />
           <Route path='redux-basic/redux-counter' component={ReduxCounter} />
