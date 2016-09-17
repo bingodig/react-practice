@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 
-class Name extends Component {
-  render() {
-    const name = this.props.name;
-
-    return <span>{ name } </span>
-  }
-}
-
 export default class extends Component {
   constructor(props) {
     super(props);
