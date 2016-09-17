@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
+import ReactMarkdown from 'react-markdown';
 
 import WhatIsReact from './react-basic/what-is-react';
 import PropsState from './react-basic/props-state';
@@ -9,6 +10,8 @@ import ReactCounter from './redux-basic/react-counter';
 import ReduxCounter from './redux-basic/redux-counter';
 import ReduxTodo from './redux-intermediate/redux-todo';
 import RedditApp from './redux-async/reddit-app';
+
+const input = require('raw!./text.md')
 
 class App extends Component {
   render() {
@@ -86,7 +89,16 @@ class App extends Component {
 
 class None extends Component {
   render () {
-    return <h1>React Practice</h1>
+    return (
+      <div>
+        <div className="page-header">
+          <h2>React Practice</h2>
+        </div>
+        <section className="well">
+          <ReactMarkdown source={input} />
+        </section>
+      </div>
+    )
   }
 }
 
