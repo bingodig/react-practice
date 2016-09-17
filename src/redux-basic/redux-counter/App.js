@@ -33,7 +33,6 @@ export default class extends Component {
         <p>{ count }</p>
         <button
           onClick={ e => {
-            e.preventDefault();
             store.dispatch({type: 'INCREMENT'})
           }}
         >+</button>

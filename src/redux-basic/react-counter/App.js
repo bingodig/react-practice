@@ -9,14 +9,14 @@ export default class extends Component {
     }
   }
   render() {
+    const count = this.state.count
     return (
       <div>
         <p>{ this.state.count }</p>
         <button
-          onClick={ e => {
-            e.preventDefault();
+          onClick={ () => {
             this.setState({
-              count: this.state.count + 1,
+              count: count + 1,
             });
           }}
         >+</button>
