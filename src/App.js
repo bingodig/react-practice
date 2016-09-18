@@ -9,6 +9,7 @@ import Tips from './react-basic/tips';
 import Todo from './react-intermediate/todo';
 import ReactCounter from './redux-basic/react-counter';
 import ReduxCounter from './redux-basic/redux-counter';
+import ReactReduxCounter from './redux-basic/react-redux-counter';
 import ReduxTodo from './redux-intermediate/redux-todo';
 import RedditApp from './redux-async/reddit-app';
 
@@ -57,6 +58,7 @@ class App extends Component {
                   <ul className="dropdown-menu">
                     <li><Link to='redux-basic/react-counter'>counter w/o redux</Link></li>
                     <li><Link to='redux-basic/redux-counter'>counter w/ redux</Link></li>
+                    <li><Link to='redux-basic/react-redux-counter'>counter w/ react-redux</Link></li>
                   </ul>
                 </li>
                 <li className="dropdown">
@@ -117,6 +119,7 @@ export default class extends Component {
           <Route path='react-intermediate/todo' component={Todo} />
           <Route path='redux-basic/react-counter' component={ReactCounter} />
           <Route path='redux-basic/redux-counter' component={ReduxCounter} />
+          <Route path='redux-basic/react-redux-counter' component={ReactReduxCounter} />
           <Route path='redux-intermediate/redux-todo' component={ReduxTodo} />
           <Route path='redux-async/reddit-app' component={RedditApp} />
           <Route path="*" component={None} />
