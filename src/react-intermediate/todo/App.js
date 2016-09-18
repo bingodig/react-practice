@@ -8,14 +8,15 @@ class TodoItem extends Component {
       <li
         style={{
           textDecoration: todo.done ? 'line-through' : 'none',
-          color: todo.done ? 'gray' : 'black',
+          color: todo.done ? 'gray' : 'black'
         }}
       >
         <button onClick={this.props.onToggle}>toggle</button>
         <button onClick={this.props.onDelete}>x</button>
         { todo.text }
       </li>
-    );
+    )
+
   }
 }
 
@@ -25,72 +26,68 @@ export default class extends Component {
 
     this.state = {
       text: '',
-      todos: [],
-    }
+      todos: []
+    };
 
-    this._addTodo = this._addTodo.bind(this);
-    this._toggleTodo = this._toggleTodo.bind(this);
-    this._deleteTodo = this._deleteTodo.bind(this);
+    this.addTodo = this.addTodo.bind(this);
+    this.toggleTodo = this.toggleTodo.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
-  _addTodo(todo) {
+  addTodo(todo) {
     const prevTodos = this.state.todos;
 
     this.setState({
-      todos: [
-        ...prevTodos,
-        todo
-      ]
+      todos: [...prevTodos, todo]
     })
   }
 
-  _toggleTodo(index) {
+  toggleTodo(index) {
     const prevTodos = this.state.todos;
 
     this.setState({
       todos: prevTodos.map((todo, i) => {
-        if(index !== i) {
+        if(index != i) {
           return todo
         } else {
           return {
-            ...todo,
+            text: todo.text,
             done: !todo.done
-          };
+          }
         }
       })
     });
   }
 
-  _deleteTodo(index) {
+  deleteTodo(index) {
     const prevTodos = this.state.todos;
 
     this.setState({
-      todos: prevTodos.filter((todo, i) => i !== index)
-    })
+      todos: prevTodos.filter((todo, i) => i != index)
+    });
   }
 
-  render() {
+  render () {
     const todos = this.state.todos;
 
     return (
       <div>
         <ul>
-          { todos.map((todo, i) => {
+          {todos.map((todo, i) => {
             return (
               <TodoItem
                 key={i}
                 todo={todo}
-                onToggle={() => {
-                  this._toggleTodo(i);
+                onToggle={ () => {
+                  this.toggleTodo(i);
                 }}
-                onDelete={() => {
-                  this._deleteTodo(i);
+                onDelete={ () => {
+                  this.deleteTodo(i);
                 }}
               />
             )
           })}
         </ul>
-
         <input
           type="text"
           value={ this.state.text }
@@ -100,12 +97,11 @@ export default class extends Component {
             })
           }}
         />
-
         <button
-          onClick={() => {
-            this._addTodo({text: this.state.text, done: false})
+          onClick={ () => {
+            this.addTodo({text: this.state.text, done: false})
             this.setState({
-              text: '',
+              text: ''
             })
           }}
         >Add</button>
